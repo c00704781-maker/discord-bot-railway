@@ -1,0 +1,16 @@
+{
+  "name": "discord-bot-railway",
+  "version": "1.0.0",
+  "description": "Arabic Discord system bot for Railway: moderation, tickets, temporary voice rooms, and game lobbies.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3"
+  }
+}
