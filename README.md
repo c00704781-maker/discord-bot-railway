@@ -1,96 +1,27 @@
-# Discord Bot Railway
+# RA Games — RISING ASHES
 
-بوت ديسكورد عربي جاهز للنشر على Railway.
+Discord games bot for RA / RISING ASHES.
 
-## الميزات
+## Commands
 
-- أوامر إدارة: `/ban`, `/kick`, `/timeout`, `/clear`, `/help`, `/ping`
-- نظام تكت كامل: `/setup-ticket`
-- نظام لوبيات ألعاب: `/setup-lobby`
-- نظام رومات صوتية مؤقتة: `/setup-tempvoice`
-- أزرار وتحكم بالملكية والقفل والحد الأقصى للأعضاء
+- `-العاب` / `-مساعدة` — command menu
+- `-اعلام` — flags game with image card, 4 buttons, 15 second timer, and points
+- `-روليت` — roulette lobby, minimum 3 players, wheel image, winner chooses one player for the next-round penalty
+- `-كراسي` — musical chairs button game
+- `-مافيا` — mafia lobby, private roles, and public voting
+- `-نقاط` — your points
+- `-توب` — server leaderboard
 
-## تشغيله على Railway من الآيفون
+## Railway
 
-1. ادخل Railway.
-2. New Project.
-3. Deploy from GitHub repo.
-4. اختر هذا المستودع.
-5. أضف متغير البيئة:
+Required variable: `DISCORD_TOKEN`
 
-```env
-DISCORD_TOKEN=ضع_توكن_بوتك_هنا
+Optional variable: `PREFIX` defaults to `-`
+
+Start command:
+
+```bash
+npm start
 ```
 
-اختياريًا، لتسجيل أوامر السلاش بسرعة داخل سيرفر واحد فقط:
-
-```env
-GUILD_ID=ايدي_السيرفر
-```
-
-## إعدادات Discord Developer Portal
-
-لازم تفعل من صفحة البوت:
-
-- SERVER MEMBERS INTENT
-- MESSAGE CONTENT INTENT
-
-وتأكد أن رابط دعوة البوت يحتوي الصلاحيات المناسبة:
-
-- Administrator أو على الأقل:
-  - Manage Channels
-  - Manage Roles
-  - Manage Messages
-  - Ban Members
-  - Kick Members
-  - Moderate Members
-  - Move Members
-  - Send Messages
-  - Embed Links
-  - Use Slash Commands
-
-## الأوامر بعد تشغيل البوت
-
-### التكت
-
-```text
-/setup-ticket channel:#ticket-panel
-```
-
-يرسل لوحة فيها اختيار:
-
-- شكوى
-- اقتراح
-- نظام الاشتراكات
-
-### اللوبيات
-
-```text
-/setup-lobby channel:#lobby-panel
-```
-
-يرسل لوحة فيها:
-
-- Create Lobby
-- Find Lobby
-
-الألعاب الموجودة:
-
-- Mobile Legends: يطلب ID
-- COD Mobile: يطلب UID
-- Roblox: يطلب Username
-
-### الرومات الصوتية المؤقتة
-
-1. سو روم صوتي باسم مثل: `Join To Create`
-2. نفذ:
-
-```text
-/setup-tempvoice join_channel:"Join To Create"
-```
-
-أي شخص يدخل هذا الروم، البوت ينشئ له روم صوتي خاص وينقله له، ثم يرسل أزرار التحكم داخل شات الروم الصوتي.
-
-## ملاحظة مهمة عن التخزين
-
-البوت يحفظ الإعدادات في ملف محلي داخل مجلد `data`. هذا مناسب كبداية. إذا صار عندك سيرفر كبير أو تبي حفظ دائم حتى بعد إعادة بناء Railway، نقدر نطوره لاحقًا ونربطه بقاعدة بيانات مثل Redis أو PostgreSQL.
+Enable Message Content Intent and Server Members Intent in Discord Developer Portal.
